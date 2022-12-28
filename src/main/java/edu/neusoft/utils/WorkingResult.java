@@ -1,10 +1,8 @@
 package edu.neusoft.utils;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-//@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 @Data
 @AllArgsConstructor
 public class WorkingResult {
