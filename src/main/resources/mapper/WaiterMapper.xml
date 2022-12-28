@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mapper.WaiterMapper">
+    <resultMap id="WaiterResult" type="edu.neusoft.domain.Waiter">
+        <id property="waiter_id" column="waiter_id"/>
+        <result property="waiter_name" column="waiter_name"/>
+        <result property="password" column="waiter_password"/>
+        <result property="waiter_phone" column="waiter_phone" />
+        <result property="waiter_email" column="waiter_email" />
+    </resultMap>
+
+    <select id="getAllWaiters" resultMap="WaiterResult">
+        select * from waiters
+    </select>
+    <select id="loginWaiter" resultMap="WaiterResult">
+        select * from waiters where waiter_id=#{waiter_id}
+    </select>
+
+    <insert id="addWaiter" parameterType="edu.neusoft.domain.Waiter">
+        insert into waiters values (#{waiter_id},#{password},#{waiter_phone},#{waiter_email},#{waiter_name})
+    </insert>
+
+    <update id="updateWaiter" parameterType="edu.neusoft.domain.Waiter">
+        update waiters
+            <set>
+                waiter_password = #{password},
+                waiter_phone = #{waiter_phone},
+                waiter_email = #{waiter_email},
+                waiter_name = #{waiter_name}
+            </set>
+        where waiter_id = #{waiter_id}
+    </update>
+
+    <delete id="deleteWaiter">
+        delete from waiters where Waiter_id = #{waiter_id}
+    </delete>
+</mapper>

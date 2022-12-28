@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mapper.ClassroomMapper">
+    <resultMap id="ClassroomResult" type="edu.neusoft.domain.Classroom">
+        <id property="classroom_id" column="classroom_id"/>
+        <result property="classroom_num" column="classroom_num"/>
+        <result property="classroom_build" column="classroom_build"/>
+        <result property="classroom_room" column="classroom_room"/>
+        <result property="classroom_remark" column="classroom_remark"/>
+    </resultMap>
+
+    <select id="getAllClassrooms" resultMap="ClassroomResult">
+        select * from classroom
+    </select>
+
+    <insert id="addClassroom" parameterType="edu.neusoft.domain.Classroom">
+        insert into classroom values (#{classroom_id},#{classroom_num},#{classroom_build},#{classroom_room},#{classroom_remark})
+    </insert>
+
+    <update id="updateClassroom" parameterType="edu.neusoft.domain.Classroom">
+        update classroom
+            <set>
+                classroom_num = #{classroom_num},
+                classroom_build = #{classroom_build},
+                classroom_room = #{classroom_room},
+                classroom_remark = #{classroom_remark}
+            </set>
+        where classroom_id = #{classroom_id}
+    </update>
+
+    <delete id="deleteClassroom">
+        delete from classroom where classroom_id = #{classroom_id}
+    </delete>
+</mapper>

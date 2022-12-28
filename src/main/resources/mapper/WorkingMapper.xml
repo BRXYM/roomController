@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mapper.WorkingMapper">
+    <resultMap id="WorkingResult" type="edu.neusoft.domain.Working">
+        <id property="work_id" column="work_id"/>
+        <result property="work_user_id" column="work_user_id"/>
+        <result property="work_classroom_id" column="work_classroom_id"/>
+        <result property="work_waiter_id" column="work_waiter_id"/>
+        <result property="work_start_time" column="work_start_id"/>
+        <result property="work_end_time" column="work_end_id"/>
+        <result property="work_classroom_remark" column="work_classroom_remark"/>
+    </resultMap>
+
+    <select id="getAllWorking" resultMap="WorkingResult">
+        select * from working
+    </select>
+
+    <insert id="addWorking" parameterType="edu.neusoft.domain.Working">
+        insert into working values (#{work_id},#{work_user_id},#{work_classroom_id},#{work_waiter_id},#{work_start_time},#{work_end_time},#{work_classroom_remark})
+    </insert>
+
+    <update id="updateWorking" parameterType="edu.neusoft.domain.Working">
+        update working
+            <set>
+                work_user_id = #{work_user_id},
+                work_classroom_id = #{work_classroom_id},
+                work_waiter_id = #{work_waiter_id},
+                work_start_time = #{work_start_time},
+                work_end_time = #{work_end_time},
+                work_classroom_remark = #{work_classroom_remark}
+            </set>
+        where work_id = #{work_id}
+    </update>
+
+    <delete id="deleteWorking">
+        delete from working where work_id = #{work_id}
+    </delete>
+
+    <select id="getAllWorkingForUser" resultMap="WorkingResult">
+    select * from working where work_user_id=#{work_user_id}
+    </select>
+
+    <select id="getAllWorkingForWaiter" resultMap="WorkingResult">
+        select * from working where work_waiter_id=#{work_waiter_id}
+    </select>
+
+    <select id="getAllWorkingForClassroom" resultMap="WorkingResult">
+        select * from working where work_classroom_id=#{work_classroom_id}
+    </select>
+
+
+
+</mapper>

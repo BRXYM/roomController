@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mapper.UserMapper">
+    <resultMap id="UserResult" type="edu.neusoft.domain.User">
+        <id property="user_id" column="user_id"/>
+        <result property="user_name" column="user_name"/>
+        <result property="password" column="user_password"/>
+        <result property="user_phone" column="user_phone" />
+        <result property="user_email" column="user_email" />
+    </resultMap>
+
+    <select id="getAllUsers" resultMap="UserResult">
+        select * from users
+    </select>
+    <select id="loginUser" resultMap="UserResult">
+        select * from users where user_id=#{user_id}
+    </select>
+
+    <insert id="addUser" parameterType="edu.neusoft.domain.User">
+        insert into users values (#{user_id},#{password},#{user_phone},#{user_email},#{user_name})
+    </insert>
+
+    <update id="updateUser" parameterType="edu.neusoft.domain.User">
+        update users
+            <set>
+                user_password = #{password},
+                user_phone = #{user_phone},
+                user_email = #{user_email},
+                user_name = #{user_name}
+            </set>
+        where user_id = #{user_id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from users where user_id = #{user_id}
+    </delete>
+</mapper>

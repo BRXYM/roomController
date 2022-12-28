@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="cf8df2c1-64a2-42db-8834-156dd007682d" name="MySQL - springboot@localhost (DDL) Mapping">
+      <data-sources db="403be19c-ccd9-4794-89d3-e7344d0d181a" ddl="abcdf4d3-4695-4a7e-876a-81fa6f91781e" />
+      <scope>
+        <node kind="schema" qname="storedb" />
+      </scope>
+    </mapping>
+  </component>
+</project>
