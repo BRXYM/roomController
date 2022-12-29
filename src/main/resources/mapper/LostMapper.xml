@@ -8,48 +8,44 @@
         <result property="lost_user_id" column="lost_user_id"/>
         <result property="lost_infor" column="lost_infor"/>
         <result property="lost_remark" column="lost_remark"/>
+        <result property="lost_time" column="lost_time"/>
+        <result property="lost_type" column="lost_type"/>
     </resultMap>
 
     <select id="getAllLost" resultMap="LostResult">
         select * from lost
     </select>
 
-    <insert id="addBook" parameterType="edu.neusoft.domain.Book">
-        insert into book values (#{book_id},#{book_user_id},#{book_classroom_id},#{book_waiter_id},#{audit},#{book_start_time},#{book_end_time})
+    <insert id="addLost" parameterType="edu.neusoft.domain.Lost">
+        insert into lost values (#{lost_id},#{lost_user_id},#{lost_infor},#{lost_remark},#{lost_time},#{lost_type})
     </insert>
 
-    <update id="updateBook" parameterType="edu.neusoft.domain.Book">
-        update book
+    <update id="updateLost" parameterType="edu.neusoft.domain.Lost">
+        update lost
             <set>
-                book_user_id = #{book_user_id},
-                book_classroom_id = #{book_classroom_id},
-                book_waiter_id = #{book_waiter_id},
-                audit = #{audit},
-                book_start_time = #{book_start_time},
-                book_end_time = #{book_end_time}
+                lost_user_id = #{lost_user_id},
+                lost_infor = #{lost_infor},
+                lost_remark = #{lost_remark},
+                lost_time = #{lost_time},
+                lost_type = #{lost_type}
             </set>
-        where book_id = #{book_id}
+        where lost_id = #{lost_id}
     </update>
 
-    <delete id="deleteBook">
-        delete from book where book_id = #{book_id}
+    <delete id="deleteLost">
+        delete from lost where lost_id = #{lost_id}
     </delete>
 
-    <select id="getAllBookForUser" resultMap="BookResult">
-        select * from book where book_user_id=#{book_user_id}
+    <select id="getAllLostForUser" resultMap="LostResult">
+        select * from lost where lost_user_id=#{lost_user_id}
     </select>
 
-    <select id="getAllBookForClassroom" resultMap="BookResult">
-        select * from book where book_classroom_id=#{book_classroom_id}
+    <select id="getAllLostForTime" resultMap="LostResult">
+        select * from lost where lost_time like #{lost_time}
     </select>
 
-    <select id="getAllBookForWaiter" resultMap="BookResult">
-        select * from book where book_waiter_id=#{book_waiter_id}
-    </select>
-
-    <select id="getAllBookForAudit" resultMap="BookResult">
-        select * from book where audit=#{audit}
-    </select>
-
+    <select id="getAllLostForType" resultMap="LostResult">
+    select * from lost where lost_type=#{lost_type}
+</select>
 
 </mapper>

@@ -11,6 +11,8 @@ public interface LostMapper {
     int addLost(Lost lost);
     int updateLost(Lost lost);
     int deleteLost(int lost_id);
-    int getAllLostForUser(int lost_user_id);
+    List<Lost> getAllLostForUser(int lost_user_id);
+    List<Lost> getAllLostForTime(String lost_time);
+    List<Lost> getAllLostForType(int lost_type);
 
 }

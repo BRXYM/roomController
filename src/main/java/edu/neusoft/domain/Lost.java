@@ -12,4 +12,6 @@ public class Lost {
     private int lost_user_id;
     private String lost_infor;
     private String lost_remark;
+    private String lost_time;
+    private int lost_type;
 }

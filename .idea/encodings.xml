@@ -3,6 +3,7 @@
   <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
     <file url="file://$PROJECT_DIR$/src/main/java/edu/neusoft/service/BookService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/neusoft/service/ServiceImpl/BookServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/edu/neusoft/service/ServiceImpl/LostServeImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/edu/neusoft/service/ServiceImpl/WorkingServiceImpl.java" charset="UTF-8" />
   </component>
 </project>
