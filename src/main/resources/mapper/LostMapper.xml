@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mapper.LostMapper">
+    <resultMap id="LostResult" type="edu.neusoft.domain.Lost">
+        <id property="lost_id" column="lost_id"/>
+        <result property="lost_user_id" column="lost_user_id"/>
+        <result property="lost_infor" column="lost_infor"/>
+        <result property="lost_remark" column="lost_remark"/>
+    </resultMap>
+
+    <select id="getAllLost" resultMap="LostResult">
+        select * from lost
+    </select>
+
+    <insert id="addBook" parameterType="edu.neusoft.domain.Book">
+        insert into book values (#{book_id},#{book_user_id},#{book_classroom_id},#{book_waiter_id},#{audit},#{book_start_time},#{book_end_time})
+    </insert>
+
+    <update id="updateBook" parameterType="edu.neusoft.domain.Book">
+        update book
+            <set>
+                book_user_id = #{book_user_id},
+                book_classroom_id = #{book_classroom_id},
+                book_waiter_id = #{book_waiter_id},
+                audit = #{audit},
+                book_start_time = #{book_start_time},
+                book_end_time = #{book_end_time}
+            </set>
+        where book_id = #{book_id}
+    </update>
+
+    <delete id="deleteBook">
+        delete from book where book_id = #{book_id}
+    </delete>
+
+    <select id="getAllBookForUser" resultMap="BookResult">
+        select * from book where book_user_id=#{book_user_id}
+    </select>
+
+    <select id="getAllBookForClassroom" resultMap="BookResult">
+        select * from book where book_classroom_id=#{book_classroom_id}
+    </select>
+
+    <select id="getAllBookForWaiter" resultMap="BookResult">
+        select * from book where book_waiter_id=#{book_waiter_id}
+    </select>
+
+    <select id="getAllBookForAudit" resultMap="BookResult">
+        select * from book where audit=#{audit}
+    </select>
+
+
+</mapper>
