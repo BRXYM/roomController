@@ -5,16 +5,16 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class WorkingResult {
+public class LostResult {
     private Integer statusCode;
 
     private String  code;
 
-    private Object working;
+    private Object lost;
 
     private String message;
 
-    public WorkingResult(int statusCode, String code , String message) {
+    public LostResult(int statusCode, String code , String message) {
         this(statusCode, code,null, message);
     }
 

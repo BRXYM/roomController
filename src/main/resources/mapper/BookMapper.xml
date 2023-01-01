@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neusoft.mapper.BookMapper">
+    <resultMap id="BookResult" type="edu.neusoft.domain.Book">
+        <id property="book_id" column="book_id"/>
+        <result property="book_user_id" column="book_user_id"/>
+        <result property="book_classroom_id" column="book_classroom_id"/>
+        <result property="book_waiter_id" column="book_waiter_id"/>
+        <result property="audit" column="audit"/>
+        <result property="book_start_time" column="book_start_time"/>
+        <result property="book_end_time" column="book_end_time"/>
+    </resultMap>
+
+    <select id="getAllBook" resultMap="BookResult">
+        select * from book
+    </select>
+
+    <insert id="addBook" parameterType="edu.neusoft.domain.Book">
+        insert into book values (#{book_id},#{book_user_id},#{book_classroom_id},#{book_waiter_id},#{audit},#{book_start_time},#{book_end_time})
+    </insert>
+
+    <update id="updateBook" parameterType="edu.neusoft.domain.Book">
+        update book
+            <set>
+                book_user_id = #{book_user_id},
+                book_classroom_id = #{book_classroom_id},
+                book_waiter_id = #{book_waiter_id},
+                audit = #{audit},
+                book_start_time = #{book_start_time},
+                book_end_time = #{book_end_time}
+            </set>
+        where book_id = #{book_id}
+    </update>
+
+    <delete id="deleteBook">
+        delete from book where book_id = #{book_id}
+    </delete>
+
+    <select id="getAllBookForUser" resultMap="BookResult">
+        select * from book where book_user_id=#{book_user_id}
+    </select>
+
+    <select id="getAllBookForClassroom" resultMap="BookResult">
+        select * from book where book_classroom_id=#{book_classroom_id}
+    </select>
+
+    <select id="getAllBookForWaiter" resultMap="BookResult">
+        select * from book where book_waiter_id=#{book_waiter_id}
+    </select>
+
+    <select id="getAllBookForAudit" resultMap="BookResult">
+        select * from book where audit=#{audit}
+    </select>
+
+
+</mapper>
