@@ -8,8 +8,8 @@
         <result property="work_user_id" column="work_user_id"/>
         <result property="work_classroom_id" column="work_classroom_id"/>
         <result property="work_waiter_id" column="work_waiter_id"/>
-        <result property="work_start_time" column="work_start_time"/>
-        <result property="work_end_time" column="work_end_time"/>
+        <result property="work_start_time" column="work_start_id"/>
+        <result property="work_end_time" column="work_end_id"/>
         <result property="work_classroom_remark" column="work_classroom_remark"/>
     </resultMap>
 
