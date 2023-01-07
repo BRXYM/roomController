@@ -10,4 +10,6 @@ public interface AdminMapper {
     Admin loginAdmin(int User_id);
     int Adminupdate(Admin admin);
 
+    List<Admin> getAllAdmin();
+
 }

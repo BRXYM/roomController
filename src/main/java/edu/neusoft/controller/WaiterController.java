@@ -21,7 +21,13 @@ public class WaiterController {
     //获取服务员信息
     @GetMapping("/getAllWaiters")
     public WaiterResult getAllWaiter(){
+
         return waiterService.getAllWaiters();
+    }
+    //用户获取所有服务员
+    @GetMapping("/userGetAllWaiter")
+    public WaiterResult userGetAllWaiter(){
+        return waiterService.userGetAllWaiter();
     }
     //服务员登录
     @PostMapping("/login")

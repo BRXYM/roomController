@@ -14,6 +14,9 @@
     <select id="getAllWaiters" resultMap="WaiterResult">
         select * from waiters
     </select>
+    <select id="userGetAllWaiters" resultMap="WaiterResult">
+        select waiter_id,waiter_phone,waiter_email,waiter_name from waiters
+    </select>
     <select id="loginWaiter" resultMap="WaiterResult">
         select * from waiters where waiter_id=#{waiter_id}
     </select>

@@ -15,7 +15,9 @@
         select * from admin where admin_id=#{admin_id}
     </select>
 
-
+    <select id="getAllAdmin" resultMap="AdminResult">
+        select admin_id,admin_name,admin_phone from admin
+    </select>
 
     <update id="Adminupdate" parameterType="edu.neusoft.domain.Admin">
         update admin

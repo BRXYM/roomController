@@ -23,4 +23,8 @@ public class AdminController {
     public AdminResult updateController(@RequestBody Admin admin){
         return adminService.AdminupdateService(admin);
     }
+    @GetMapping("/getAllAdmin")
+    public AdminResult getAllAdmin(){
+        return adminService.getAllAdmin();
+    }
 }

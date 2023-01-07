@@ -22,6 +22,14 @@ public class WaiterServiceImpl implements WaiterService {
         System.out.println("获取所有服务员信息");
         return new WaiterResult(200,"001",list,"获取成功");
     }
+
+    @Override
+    public WaiterResult userGetAllWaiter() {
+        List<Waiter> list = waiterMapper.userGetAllWaiters();
+        System.out.println("获取所有服务员信息");
+        return new WaiterResult(200,"001",list,"获取成功");
+    }
+
     //用户登录
     @Override
     public WaiterResult WaiterloginService(int waiter_id, String password) {

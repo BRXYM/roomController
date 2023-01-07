@@ -7,6 +7,7 @@ import java.util.List;
 @Mapper
 public interface WaiterMapper {
     List<Waiter> getAllWaiters();
+    List<Waiter> userGetAllWaiters();
     Waiter loginWaiter(int waiter_id);
 
     int addWaiter(Waiter waiter);
@@ -14,5 +15,6 @@ public interface WaiterMapper {
     int updateWaiter(Waiter waiter);
 
     int deleteWaiter(int waiter_id);
+
 
 }

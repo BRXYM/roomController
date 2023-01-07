@@ -7,6 +7,7 @@ import edu.neusoft.utils.AdminResult;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -40,5 +41,12 @@ public class AdminServiceImpl implements AdminService {
         }
         System.out.println("管理员不存在");
         return new AdminResult(500,"002","修改失败");
+    }
+    @Override
+    public AdminResult getAllAdmin(){
+        List<Admin> list = adminMapper.getAllAdmin();
+
+        System.out.println("获取所有管理员信息");
+        return new AdminResult(500,"001",list,"获取成功");
     }
 }
