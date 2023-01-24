@@ -19,7 +19,7 @@ public class LostController {
         return lostService.getAllLost();
     }
     //增加遗失物品
-    @GetMapping("/add")
+    @PostMapping("/add")
     public LostResult addController(@RequestBody Lost lost){
         return lostService.LostaddService(lost);
     }

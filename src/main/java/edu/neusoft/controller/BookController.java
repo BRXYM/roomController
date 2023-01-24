@@ -19,7 +19,7 @@ public class BookController {
         return bookService.getAllBook();
     }
     //增加预定信息
-    @GetMapping("/add")
+    @PostMapping("/add")
     public BookResult addController(@RequestBody Book book){
         return bookService.BookaddService(book);
     }

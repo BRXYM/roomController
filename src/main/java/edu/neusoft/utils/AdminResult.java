@@ -11,7 +11,7 @@ public class AdminResult {
 
     private String  code;
 
-    private Object user;
+    private Object admin;
 
     private String message;
 

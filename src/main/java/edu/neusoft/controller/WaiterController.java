@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  */
 @CrossOrigin
 @RestController
-@RequestMapping("/waiters")
+@RequestMapping("/waiter")
 public class WaiterController {
 
     @Resource
