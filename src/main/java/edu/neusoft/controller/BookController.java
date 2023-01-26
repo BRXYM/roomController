@@ -49,9 +49,9 @@ public class BookController {
         return bookService.getAllBookForWaiter(book_waiter_id);
     }
     //查看已通过/未通过的预约记录
-    @GetMapping("/getbookforaudit")
-    public BookResult getAllBookForAudit(@RequestParam int audit){
-        return bookService.getAllBookForAudit(audit);
+    @PostMapping("/getbookforaudit")
+    public BookResult getAllBookForAudit(@RequestBody Book book){
+        return bookService.getAllBookForAudit(book);
     }
 
 

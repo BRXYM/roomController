@@ -4,7 +4,6 @@ import edu.neusoft.domain.Book;
 import edu.neusoft.mapper.BookMapper;
 import edu.neusoft.service.BookService;
 import edu.neusoft.utils.BookResult;
-import edu.neusoft.utils.WorkingResult;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -80,8 +79,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public BookResult getAllBookForAudit(int audit) {
-        List<Book> list = bookMapper.getAllBookForAudit(audit);
+    public BookResult getAllBookForAudit(Book book) {
+        List<Book> list = bookMapper.getAllBookForAudit(book);
         return new BookResult(200,"001",list,"获取成功");
     }
 

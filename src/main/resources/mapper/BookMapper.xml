@@ -51,7 +51,7 @@
     </select>
 
     <select id="getAllBookForAudit" resultMap="BookResult">
-        select * from book where audit=#{audit}
+        select * from book where audit=#{audit} and book_waiter_id=#{book_waiter_id}
     </select>
 
 

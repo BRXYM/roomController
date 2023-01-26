@@ -22,5 +22,5 @@ public interface BookMapper {
     //服务员审核过的预定
     List<Book> getAllBookForWaiter(int book_waiter_id);
     //查找已通过/未通过的预定
-    List<Book> getAllBookForAudit(int audit);
+    List<Book> getAllBookForAudit(Book book);
 }

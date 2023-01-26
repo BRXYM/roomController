@@ -11,6 +11,6 @@ public interface BookService {
     BookResult getAllBookForUser(int book_user_id);
     BookResult getAllBookForClassroom(int book_classroom_id);
     BookResult getAllBookForWaiter(int book_waiter_id);
-    BookResult getAllBookForAudit(int audit);
+    BookResult getAllBookForAudit(Book book);
 
 }
