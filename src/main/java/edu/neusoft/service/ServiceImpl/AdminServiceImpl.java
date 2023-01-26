@@ -24,7 +24,7 @@ public class AdminServiceImpl implements AdminService {
         }else {
             if (Objects.equals(admin.getAdmin_password(),admin_password)){
                 System.out.println(admin.getAdmin_name()+"登陆成功");
-                return new AdminResult(200,"001","登陆成功");
+                return new AdminResult(200,"001",admin,"登陆成功");
             }else {
                 System.out.println(admin.getAdmin_name()+"密码错误");
                 return new AdminResult(200,"003",null,"密码错误");

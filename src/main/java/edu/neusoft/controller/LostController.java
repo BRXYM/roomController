@@ -24,7 +24,7 @@ public class LostController {
         return lostService.LostaddService(lost);
     }
     //ĞŞ¸ÄÒÅÊ§ÎïÆ·
-    @GetMapping("/update")
+    @PostMapping("/update")
     public LostResult updateController(@RequestBody Lost lost){
         return lostService.LostupdateService(lost);
     }
