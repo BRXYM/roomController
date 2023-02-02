@@ -19,7 +19,7 @@ public class WorkingController {
         return workingService.getAllWorking();
     }
     //增加使用记录
-    @GetMapping("/add")
+    @PostMapping("/add")
     public WorkingResult addController(@RequestBody Working working){
         return workingService.WorkingaddService(working);
     }
