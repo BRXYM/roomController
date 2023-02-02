@@ -19,7 +19,7 @@ public class ClassroomController {
         return classroomService.getAllClassrooms();
     }
     //增加教室
-    @GetMapping("/add")
+    @PostMapping("/add")
     public ClassroomResult addController(@RequestBody Classroom classroom){
         return classroomService.ClassroomaddService(classroom);
     }
