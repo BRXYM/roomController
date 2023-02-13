@@ -77,7 +77,7 @@ public class LostServeImpl implements LostService {
     }
 
     @Override
-    public LostResult getAllLostForType(int lost_type) {
+    public LostResult getAllLostForType(String lost_type) {
         List<Lost> list = lostMapper.getAllLostForType(lost_type);
         return new LostResult(200,"001",list,"获取成功");
     }

@@ -13,6 +13,6 @@ public interface LostMapper {
     int deleteLost(int lost_id);
     List<Lost> getAllLostForUser(int lost_user_id);
     List<Lost> getAllLostForTime(String lost_time);
-    List<Lost> getAllLostForType(int lost_type);
+    List<Lost> getAllLostForType(String lost_type);
 
 }

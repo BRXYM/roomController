@@ -10,6 +10,6 @@ public interface LostService {
     LostResult LostdeleteService(int lost_id);
     LostResult getAllLostForUser(int lost_user_id);
     LostResult getAllLostForTime(String lost_time);
-    LostResult getAllLostForType(int lost_type);
+    LostResult getAllLostForType(String lost_type);
 
 }

@@ -45,7 +45,7 @@ public class LostController {
     }
     //根据类型查询遗失物品
     @GetMapping("/getlostfortype")
-    public LostResult getAllLostForType(@RequestParam int lost_type){
+    public LostResult getAllLostForType(@RequestParam String lost_type){
         return lostService.getAllLostForType(lost_type);
     }
 }
