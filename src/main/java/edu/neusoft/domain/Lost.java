@@ -13,5 +13,5 @@ public class Lost {
     private String lost_infor;
     private String lost_remark;
     private String lost_time;
-    private int lost_type;
+    private String lost_type;
 }
