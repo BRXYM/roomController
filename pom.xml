@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>edu.neusoft</groupId>
-    <artifactId>spring_goods</artifactId>
+    <artifactId>room_control</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring_goods</name>
-    <description>spring_goods</description>
+    <name>room_control</name>
+    <description>room_control</description>
     <properties>
         <java.version>17</java.version>
     </properties>

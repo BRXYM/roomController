@@ -13,37 +13,37 @@ import javax.annotation.Resource;
 public class LostController {
     @Resource
     private LostService lostService;
-    //»ñÈ¡ËùÓĞÊ§Îï¼ÇÂ¼
+    //è·å–æ‰€æœ‰å¤±ç‰©è®°å½•
     @GetMapping("/getAllLost")
     public LostResult getAllLost(){
         return lostService.getAllLost();
     }
-    //Ôö¼ÓÒÅÊ§ÎïÆ·
+    //å¢åŠ é—å¤±ç‰©å“
     @PostMapping("/add")
     public LostResult addController(@RequestBody Lost lost){
         return lostService.LostaddService(lost);
     }
-    //ĞŞ¸ÄÒÅÊ§ÎïÆ·
+    //ä¿®æ”¹é—å¤±ç‰©å“
     @PostMapping("/update")
     public LostResult updateController(@RequestBody Lost lost){
         return lostService.LostupdateService(lost);
     }
-    //É¾³ıÒÅÊ§ÎïÆ·
+    //åˆ é™¤é—å¤±ç‰©å“
     @DeleteMapping("/delete")
     public LostResult deleteController(@RequestParam int lost_id){
         return lostService.LostdeleteService(lost_id);
     }
-    //¸ù¾İÓÃ»§ID²éÑ¯ÒÅÊ§ÎïÆ·
+    //æ ¹æ®ç”¨æˆ·IDæŸ¥è¯¢é—å¤±ç‰©å“
     @GetMapping("/getlostforuser")
     public LostResult getAllLostForUser(@RequestParam int lost_user_id){
         return lostService.getAllLostForUser(lost_user_id);
     }
-    //¸ù¾İÊ±¼ä²éÑ¯ÒÅÊ§ÎïÆ·
+    //æ ¹æ®æ—¶é—´æŸ¥è¯¢é—å¤±ç‰©å“
     @GetMapping("/getlostfortime")
     public LostResult getAllLostForTime(@RequestParam String lost_time){
         return lostService.getAllLostForTime(lost_time);
     }
-    //¸ù¾İÀàĞÍ²éÑ¯ÒÅÊ§ÎïÆ·
+    //æ ¹æ®ç±»å‹æŸ¥è¯¢é—å¤±ç‰©å“
     @GetMapping("/getlostfortype")
     public LostResult getAllLostForType(@RequestParam String lost_type){
         return lostService.getAllLostForType(lost_type);

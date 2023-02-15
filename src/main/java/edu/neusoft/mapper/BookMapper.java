@@ -7,20 +7,20 @@ import java.util.List;
 
 @Mapper
 public interface BookMapper {
-    //²é¿´ËùÓĞÔ¤¶¨
+    //æŸ¥çœ‹æ‰€æœ‰é¢„å®š
     List<Book> getAllBook();
-    //Ôö¼ÓÔ¤¶¨
+    //å¢åŠ é¢„å®š
     int addBook(Book book);
-    //ĞŞ¸ÄÔ¤¶¨
+    //ä¿®æ”¹é¢„å®š
     int updateBook(Book book);
-    //É¾³ıÔ¤¶¨
+    //åˆ é™¤é¢„å®š
     int deleteBook(int book_id);
-    //ÓÃ»§µÄÔ¤¶¨Çé¿ö
+    //ç”¨æˆ·çš„é¢„å®šæƒ…å†µ
     List<Book> getAllBookForUser(int book_user_id);
-    //´Ë¼ä½ÌÊÒµÄÔ¤¶¨Çé¿ö
+    //æ­¤é—´æ•™å®¤çš„é¢„å®šæƒ…å†µ
     List<Book> getAllBookForClassroom(int book_classroom_id);
-    //·şÎñÔ±ÉóºË¹ıµÄÔ¤¶¨
+    //æœåŠ¡å‘˜å®¡æ ¸è¿‡çš„é¢„å®š
     List<Book> getAllBookForWaiter(int book_waiter_id);
-    //²éÕÒÒÑÍ¨¹ı/Î´Í¨¹ıµÄÔ¤¶¨
+    //æŸ¥æ‰¾å·²é€šè¿‡/æœªé€šè¿‡çš„é¢„å®š
     List<Book> getAllBookForAudit(Book book);
 }
