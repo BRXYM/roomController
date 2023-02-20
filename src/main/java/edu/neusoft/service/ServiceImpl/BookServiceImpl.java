@@ -9,6 +9,7 @@ import edu.neusoft.service.BookService;
 import edu.neusoft.utils.BookResult;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Objects;
 
 @EnableScheduling
+@Component
 @Service
 public class BookServiceImpl implements BookService {
     String time;
@@ -31,8 +33,7 @@ public class BookServiceImpl implements BookService {
         return new BookResult(500,"001",list,"获取成功");
     }
 
-
-    @Scheduled(fixedDelay = 5000)
+    @Scheduled(cron = "0 0/1 * * * ?")
     public void BookToWorking(){
         System.out.println("刷新使用数据");
         List<Book> book_list = bookMapper.getAllBook();
