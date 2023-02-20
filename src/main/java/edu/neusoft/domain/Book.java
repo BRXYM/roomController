@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.PrimitiveIterator;
 
 @Data
@@ -15,6 +16,6 @@ public class Book {
     private int book_classroom_id;
     private int book_waiter_id;
     private String audit;
-    private String book_start_time;
-    private String book_end_time;
+    private Date book_start_time;
+    private Date book_end_time;
 }

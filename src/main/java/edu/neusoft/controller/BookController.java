@@ -13,42 +13,42 @@ import javax.annotation.Resource;
 public class BookController {
     @Resource
     private BookService bookService;
-    //»ñÈ¡ËùÓĞÔ¤¶¨¼ÇÂ¼
+    //è·å–æ‰€æœ‰é¢„å®šè®°å½•
     @GetMapping("/getAllBook")
     public BookResult getAllBook(){
         return bookService.getAllBook();
     }
-    //Ôö¼ÓÔ¤¶¨ĞÅÏ¢
+    //å¢åŠ é¢„å®šä¿¡æ¯
     @PostMapping("/add")
     public BookResult addController(@RequestBody Book book){
         return bookService.BookaddService(book);
     }
-    //ĞŞ¸ÄÊ¹ÓÃ¼ÇÂ¼
+    //ä¿®æ”¹ä½¿ç”¨è®°å½•
     @PutMapping("/update")
     public BookResult updateController(@RequestBody Book book){
         return bookService.BookupdateService(book);
     }
-    //É¾³ıÔ¤¶¨¼ÇÂ¼
+    //åˆ é™¤é¢„å®šè®°å½•
     @DeleteMapping("/delete")
     public BookResult deleteController(@RequestParam int book_id){
         return bookService.BookdeleteService(book_id);
     }
-    //¸ù¾İÓÃ»§ID²é¿´Ô¤Ô¼¼ÇÂ¼
+    //æ ¹æ®ç”¨æˆ·IDæŸ¥çœ‹é¢„çº¦è®°å½•
     @GetMapping("/getbookforuser")
     public BookResult getAllBookForUser(@RequestParam int book_user_id){
         return bookService.getAllBookForUser(book_user_id);
     }
-    //¸ù¾İ½ÌÊÒID»ñÈ¡Ô¤Ô¼¼ÇÂ¼
+    //æ ¹æ®æ•™å®¤IDè·å–é¢„çº¦è®°å½•
     @GetMapping("/getbookforclassroom")
     public BookResult getAllBookForClassroom(@RequestParam int book_classroom_id){
         return bookService.getAllBookForClassroom(book_classroom_id);
     }
-    //¸ù¾İ·şÎñÔ±ID»ñÈ¡Ô¤Ô¼¼ÇÂ¼
+    //æ ¹æ®æœåŠ¡å‘˜IDè·å–é¢„çº¦è®°å½•
     @GetMapping("/getbookforwaiter")
     public BookResult getAllBookForWaiter(@RequestParam int book_waiter_id){
         return bookService.getAllBookForWaiter(book_waiter_id);
     }
-    //²é¿´ÒÑÍ¨¹ı/Î´Í¨¹ıµÄÔ¤Ô¼¼ÇÂ¼
+    //æŸ¥çœ‹å·²é€šè¿‡/æœªé€šè¿‡çš„é¢„çº¦è®°å½•
     @PostMapping("/getbookforaudit")
     public BookResult getAllBookForAudit(@RequestBody Book book){
         return bookService.getAllBookForAudit(book);
