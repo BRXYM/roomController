@@ -24,7 +24,7 @@ public class WorkingController {
         return workingService.WorkingaddService(working);
     }
     //修改使用记录
-    @PutMapping("update")
+    @PostMapping("update")
     public WorkingResult updateController(@RequestBody Working working){
         return workingService.WorkingupdateService(working);
     }
